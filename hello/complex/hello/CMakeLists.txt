@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 2.8)
+project(hello)
+
+file(GLOB_RECURSE ROOT_SRC_FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/*.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/*.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
+    )
+
+file(GLOB INCLUDE_FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/*.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/*.hh
+    ${CMAKE_CURRENT_SOURCE_DIR}/.hpp
+    )
+
+list(APPEND SRC_FILES ${ROOT_SRC_FILES})
+add_library(${PROJECT_NAME} ${SRC_FILES})

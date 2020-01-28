@@ -23,6 +23,14 @@ build.lib:
 	 make
 	@cd lib/build &&./sayhello
 
+build.complex:
+	@if [ -d "complex/build" ]; then rm -rf complex/build; fi
+	@mkdir complex/build && \
+	 cd complex/build && \
+	 cmake .. && \
+	 make
+	@cd complex/build &&./sayhello
+
 build.multiple:
 	@if [ -d "multiple/build" ]; then rm -rf multiple/build; fi
 	@mkdir multiple/build && \
